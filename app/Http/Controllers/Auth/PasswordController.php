@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace RuddyStore\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use RuddyStore\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller
