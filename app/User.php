@@ -1,6 +1,6 @@
 <?php
 
-namespace RuddyStore;
+namespace RuddyStore\Entities;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
