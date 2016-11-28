@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/ruddystore":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/ruddystore","hostpath":"/var/www/html/ruddystore","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/var/www/html/ruddystore","disabled":false,"__vagrantfile":true}}}
