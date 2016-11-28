@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => RuddyStore\User::class,
+            'model' => RuddyStore\Entities\User::class,
         ],
 
         // 'users' => [

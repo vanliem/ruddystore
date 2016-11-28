@@ -21,7 +21,8 @@
             "database"
         ],
         "psr-4": {
-            "RuddyStore\\": "app/"
+            "RuddyStore\\": "app/",
+            "Entities\\": "app/Entities"
         }
     },
     "autoload-dev": {
