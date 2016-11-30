@@ -10,6 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::group(['domain' => env('APP_DOMAIN', 'ruddystore.app')], function () {
+
+});
 
 Route::get('/', function () {
     return view('welcome');
