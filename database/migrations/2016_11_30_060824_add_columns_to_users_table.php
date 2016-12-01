@@ -23,9 +23,9 @@ class AddColumnsToUsersTable extends Migration
             $table->string('street', 512)->nullable()->after('address_detail');
 
             $table->integer('ward_id')->unsigned()->nullable()->after('street');
-            $table->integer('city_id')->nullable()->after('ward_id');
+            $table->integer('city_id')->unsigned()->nullable()->after('ward_id');
             $table->integer('facebook_id')->nullable()->after('city_id');
-            $table->integer('role_id')->default(1)->after('facebook_id');
+            $table->integer('role_id')->unsigned()->default(1)->after('facebook_id');
 
             $table->boolean('activated')->default(false)->after('role_id');
             $table->string('active_code', 64)->nullable()->after('activated');

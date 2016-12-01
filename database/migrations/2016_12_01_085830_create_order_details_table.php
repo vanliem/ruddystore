@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserWishlistsTable extends Migration
+class CreateOrderDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,15 @@ class CreateUserWishlistsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_wishlists', function (Blueprint $table) {
+        Schema::create('order_details', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('order_id')->unsigned();
             $table->integer('product_id')->unsigned();
-            $table->integer('user_id')->unsigned();
-            $table->dateTime('deleted_at');
+            $table->integer('color_id');
+            $table->integer('dimensions_id')->unsigned();
+            $table->decimal('price', 10, 0);
+            $table->integer('quantity');
+            $table->datetime('delete_at');
             $table->timestamps();
         });
     }
@@ -28,6 +32,6 @@ class CreateUserWishlistsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('user_wishlists');
+        Schema::drop('order_details');
     }
 }

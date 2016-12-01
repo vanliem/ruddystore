@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticleTagAssociationsTable extends Migration
+class CreateUserCommentProductAssociationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,9 @@ class CreateArticleTagAssociationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('article_tag_associations', function (Blueprint $table) {
-            $table->integer('article_id')->unsigned();
-            $table->integer('article_tag_id')->unsigned();
+        Schema::create('user_comment_product_associations', function (Blueprint $table) {
+            $table->integer('product_id')->unsigned();
+            $table->integer('user_id')->unsigned();
         });
     }
 
@@ -25,6 +25,6 @@ class CreateArticleTagAssociationsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('article_tag_associations');
+        Schema::drop('user_comment_product_associations');
     }
 }

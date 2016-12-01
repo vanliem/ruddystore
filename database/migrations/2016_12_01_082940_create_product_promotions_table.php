@@ -1,10 +1,9 @@
-
 <?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGalleriesTable extends Migration
+class CreateProductPromotionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +12,13 @@ class CreateGalleriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('galleries', function (Blueprint $table) {
+        Schema::create('product_promotions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 255);
-            $table->text('description');
-            $table->string('link', 255);
-            $table->string('banner', 255);
+            $table->integer('product_id')->unsigned();
+            $table->decimal('price', 10, 2);
+            $table->string('percent_price_discount', 255);
             $table->boolean('allow_display')->default(false);
+            $table->datetime('delete_at');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateGalleriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('galleries');
+        Schema::drop('product_promotions');
     }
 }

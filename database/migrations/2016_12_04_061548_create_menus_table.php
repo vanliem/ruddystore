@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticleTagAssociationsTable extends Migration
+class CreateMenusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,11 @@ class CreateArticleTagAssociationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('article_tag_associations', function (Blueprint $table) {
-            $table->integer('article_id')->unsigned();
-            $table->integer('article_tag_id')->unsigned();
+        Schema::create('menus', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name', 255);
+            $table->string('position', 255);
+            $table->timestamps();
         });
     }
 
@@ -25,6 +27,6 @@ class CreateArticleTagAssociationsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('article_tag_associations');
+        Schema::drop('menus');
     }
 }

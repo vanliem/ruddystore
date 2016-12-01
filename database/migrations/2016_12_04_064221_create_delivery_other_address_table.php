@@ -1,10 +1,9 @@
-
 <?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGalleriesTable extends Migration
+class CreateDeliveryOtherAddressTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +12,12 @@ class CreateGalleriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('galleries', function (Blueprint $table) {
+        Schema::create('delivery_other_address', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 255);
-            $table->text('description');
-            $table->string('link', 255);
-            $table->string('banner', 255);
-            $table->boolean('allow_display')->default(false);
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('customer_id')->unsigned()->nullable();
+            $table->string('address');
+            $table->char('phone', 11);
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateGalleriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('galleries');
+        Schema::drop('delivery_other_address');
     }
 }

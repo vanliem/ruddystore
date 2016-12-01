@@ -16,6 +16,7 @@ class CreateBranchesTable extends Migration
             $table->increments('id');
             $table->string('name', 255);
             $table->text('description');
+            $table->integer('weight');
             $table->timestamps();
         });
     }

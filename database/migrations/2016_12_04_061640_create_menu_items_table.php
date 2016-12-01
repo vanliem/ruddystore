@@ -1,10 +1,9 @@
-
 <?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGalleriesTable extends Migration
+class CreateMenuItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +12,14 @@ class CreateGalleriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('galleries', function (Blueprint $table) {
+        Schema::create('menu_items', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 255);
-            $table->text('description');
-            $table->string('link', 255);
-            $table->string('banner', 255);
-            $table->boolean('allow_display')->default(false);
+            $table->string('url', 255);
+            $table->integer('parent_id')->unsigned();
+            $table->integer('menu_id')->unsigned();
+            $table->integer('weight');
+            $table->datetime('deleted_at');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateGalleriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('galleries');
+        Schema::drop('menu_items');
     }
 }
