@@ -11,9 +11,12 @@
 |
 */
 Route::group(['domain' => env('APP_DOMAIN', 'ruddystore.app')], function () {
-
+	Route::group(['namespace' => 'Front'], function () {
+		Route::get('/', 'IndexController@index');
+	});
+	/*Route::get('/', function () {
+	    return view('welcome');
+	});*/
+	
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
